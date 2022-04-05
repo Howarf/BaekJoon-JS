@@ -25,7 +25,7 @@ rl.on("close",()=>{
     }
     else{
         if((alam[1]+alam[2])>=60){
-            console.log((alam[0]+1)+" "+(alam[1]+alam[2])%60);
+            console.log((alam[0]+((alam[1]+alam[2])/60))+" "+(alam[1]+alam[2])%60);
         }
         else{
             console.log(alam[0]+" "+(alam[1]+alam[2])%60);
