@@ -1,34 +1,22 @@
-var alam = [];
-const rl = require('readline').createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
-rl.on("line",(time)=>{
-    if(alam[0]==undefined){
-        alam = time.split(" ").map(el => parseInt(el));
-        if(alam[0]<0||alam[0]>24){
-            console.log("시간을 0시에서 24시사이로 적어주세요");
-        }
-        else{
-            if(alam[1]<0||alam[1]>59){
-                console.log("분침을 0에서 59분사이로 적어주세요");
-            }
-        }
+const fs = require('fs');
+let input,data,upMinute,upHour;
+if(process.platform=="linux"){
+    input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+}
+else{
+    input = fs.readFileSync('../data.txt').toString().trim().split('\r\n');
+}
+data = input[0].split(' ');
+upMinute = parseInt(Number(data[1])+Number(input[1]));
+upHour = (Number(data[0])+parseInt(upMinute/60))%24;
+if(data[1]+input[1] >= 60){
+    if(Number(data[0])+(upMinute/60) >= 24){
+        console.log(upHour+" "+upMinute%60);
     }
     else{
-        alam.push(Number(time));
+        console.log(upHour+" "+upMinute%60);
     }
-});
-rl.on("close",()=>{
-    if(alam[0]==23&&(alam[1]+alam[2])>59){
-        console.log((alam[0]*0)+" "+(alam[1]+alam[2])%60);
-    }
-    else{
-        if((alam[1]+alam[2])>=60){
-            console.log((alam[0]+((alam[1]+alam[2])/60))+" "+(alam[1]+alam[2])%60);
-        }
-        else{
-            console.log(alam[0]+" "+(alam[1]+alam[2])%60);
-        }
-    }
-});
+}
+else{
+    console.log(data[0]+" "+upMinute%60);
+}
