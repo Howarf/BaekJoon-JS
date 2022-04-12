@@ -6,7 +6,7 @@ if(process.platform=="linux"){
 else{
     input = fs.readFileSync("../data.txt").toString().trim().split('\r\n');
 }
-for(var i=0;i<input.length-1;i++){
+for(var i=0;i<input.length-1;i++){//10951번 문제는 -1빼면 정답
     data = input[i].split(" ");
     result += Number(data[0])+Number(data[1])+"\n";
 }
