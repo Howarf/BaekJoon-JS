@@ -7,6 +7,7 @@ else{
     input = fs.readFileSync("../data.txt").toString().trim();
 }
 num = input;
+console.log(num);
 while(true){
     i++;
     sum = Math.floor(num / 10) + num % 10;
