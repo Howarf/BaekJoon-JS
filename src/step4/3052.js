@@ -6,5 +6,5 @@ if(process.platform=="linux"){
 else{
     input = fs.readFileSync("../data.txt").toString().trim().split('\r\n');
 }
-const count = new Set(input.map(x => x % 42)).size;
+const count = new Set(input.map(el => el % 42)).size;
 console.log(count);
