@@ -4,4 +4,3 @@ function SplitNum(params) {
         numPiece = String(i).split("").map(el=>Number(el));
     }
 }
-
