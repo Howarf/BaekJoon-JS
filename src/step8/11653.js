@@ -1,4 +1,4 @@
-let input,sum = [];
+let input,sum = [],i = 2;
 const fs = require("fs")
 if(process.platform === "linux"){
     input = fs.readFileSync("/dev/stdin").toString().trim().split("\n");
@@ -6,7 +6,6 @@ if(process.platform === "linux"){
 else{
     input = fs.readFileSync("../data.txt").toString().trim().split("\r\n");
 }
-let i = 2
 let num = Number(input.shift(0));
 while(true){
     if(num % i === 0){
