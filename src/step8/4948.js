@@ -10,7 +10,7 @@ for(let i = 0; i < input.length; i++){
     let N = Number(input[i]);
     if(N === 0) break;
     const M = N*2;
-    let result = [];
+    let count = 0;
     let primArr = Array(M + 1).fill(true);
     primArr[0] = primArr[1] = false;
     for(let i = 2; i <= Math.ceil(Math.sqrt(M)); i++){
@@ -22,8 +22,8 @@ for(let i = 0; i < input.length; i++){
     }
     for(let i = N + 1; i <= M; i++){
         if(primArr[i]){
-            result.push(i);
+            count++;
         }
     }
-    console.log(result.length);
+    console.log(count);
 }
