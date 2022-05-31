@@ -7,7 +7,7 @@ else{
     input = fs.readFileSync("../data.txt").toString().trim().split("\r\n");
 }
 const testCase = input.shift();
-let bodys = input.map(el => el.split(" "));
+let bodys = input.map(el => el.split(" ").map(el => parseInt(el)));
 let bodylank = [];
 for(let i = 0; i < testCase; i++){
     let counter = 1;
