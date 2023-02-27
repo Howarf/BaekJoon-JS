@@ -1,4 +1,3 @@
-3
-ACDKJFOWIEGHE
-O
-AB
+Hello
+Baekjoon
+Online Judge
