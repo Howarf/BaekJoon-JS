@@ -6,10 +6,15 @@ if(process.platform=="linux"){
 else{
     input = fs.readFileSync("../data.txt").toString().trim().split("");
 }
-let revers = input.reverse();
-if(input === revers){
-    console.log(1);
+let revers = Array.from(input);
+revers.reverse();
+let awnser = 1;
+for(let i = 0; i < input.length; i++){
+    if(input[i] === revers[i]){
+        continue;
+    }
+    else{
+        awnser = 0;
+    }
 }
-else{
-    console.log(0);
-}
+console.log(awnser);
